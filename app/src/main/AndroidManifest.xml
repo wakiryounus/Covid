@@ -11,19 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ContinentDetailActivity"></activity>
-        <activity android:name=".CountryDetailActivity" />
-        <activity android:name=".ContinentActivity" />
-        <activity android:name=".IndiaActivity" />
-        <activity android:name=".CountriesActivity" />
-        <activity android:name=".GlobalActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".OneTimeActivity"></activity>
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".IndiaDetailActivity" />
+        <activity android:name=".ContinentDetailActivity" />
+        <activity android:name=".CountryDetailActivity" />
+        <activity android:name=".ContinentActivity" />
+        <activity android:name=".IndiaActivity" />
+        <activity android:name=".CountriesActivity" />
+        <activity android:name=".GlobalActivity" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

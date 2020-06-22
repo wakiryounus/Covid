@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Covid</string>
+    <string name="app_name">Covid-19 Tracker</string>
     <string name="countryname">countryname</string>
     <string name="population">population</string>
     <string name="continent">continent</string>
@@ -23,4 +23,10 @@
     <string name="one_death_per_people">one_death_per_people</string>
     <string name="one_test_per_people">one_test_per_people</string>
     <string name="flagUrl">flagUrl</string>
+    <string name="indian_state_name">indian_state_name</string>
+    <string name="indian_active">indian_active</string>
+    <string name="indian_death">indian_death</string>
+    <string name="indian_recovered">indian_recovered</string>
+    <string name="indian_total">indian_total</string>
+    <string name="first_time">first_time</string>
 </resources>
