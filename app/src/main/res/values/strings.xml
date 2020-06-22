@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Covid</string>
+    <string name="countryname">countryname</string>
+    <string name="population">population</string>
+    <string name="continent">continent</string>
+    <string name="updated_time">updated_time</string>
+    <string name="cases">cases</string>
+    <string name="today_cases">today_cases</string>
+    <string name="deaths">deaths</string>
+    <string name="today_deaths">today_deaths</string>
+    <string name="recovered">recovered</string>
+    <string name="today_recovered">today_recovered</string>
+    <string name="active">active</string>
+    <string name="critical">critical</string>
+    <string name="cases_per_one_million">cases_per_one_million</string>
+    <string name="deaths_per_one_million">deaths_per_one_million</string>
+    <string name="tests">tests</string>
+    <string name="recovered_per_one_million">recovered_per_one_million</string>
+    <string name="active_per_one_million">active_per_one_million</string>
+    <string name="critical_per_one_million">critical_per_one_million</string>
+    <string name="test_per_one_million">test_per_one_million</string>
+    <string name="one_case_per_people">one_case_per_people</string>
+    <string name="one_death_per_people">one_death_per_people</string>
+    <string name="one_test_per_people">one_test_per_people</string>
+    <string name="flagUrl">flagUrl</string>
+</resources>

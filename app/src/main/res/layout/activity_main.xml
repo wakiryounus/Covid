@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#1a1a1a"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginVertical="20dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="150dp"
+            android:background="@color/red"
+            android:gravity="center"
+            android:id="@+id/relLayoutGlobal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:text="Global"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_marginStart="15dp" />
+
+        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/relLayoutGlobal"
+                android:background="@color/darkYellow"
+                android:gravity="center"
+                android:id="@+id/relLayoutContinent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:text="Continents"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_marginStart="15dp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="25dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/relLayoutContinent"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:id="@+id/relLayoutCountry">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:text="Countries"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_marginStart="15dp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="25dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/relLayoutCountry"
+                android:background="@color/green"
+                android:gravity="center"
+                android:id="@+id/relLayoutIndia">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:text="India"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_marginStart="15dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</ScrollView>
