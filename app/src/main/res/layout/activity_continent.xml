@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@mipmap/detailsbackgroud"
     android:gravity="center_vertical"
     tools:context=".ContinentActivity">
     <ProgressBar
@@ -15,7 +15,7 @@
    <androidx.cardview.widget.CardView
        android:layout_width="match_parent"
        android:padding="5dp"
-       android:layout_margin="10dp"
+       android:layout_margin="20dp"
        app:cardElevation="5dp"
        app:cardCornerRadius="8dp"
        android:layout_height="wrap_content">
