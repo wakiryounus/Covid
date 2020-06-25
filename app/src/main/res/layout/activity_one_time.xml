@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OneTimeActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="COVID-19"
+                android:id="@+id/covid_19"
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="TRACKER"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:id="@+id/tracker"
+                android:layout_below="@+id/covid_19"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_width="250dp"
+                android:id="@+id/image"
+                android:src="@mipmap/frontcover"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tracker"
+                android:layout_height="250dp"/>
+            <TextView
+                android:text="GET LIVE UPDATES ABOUT "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:id="@+id/getLiveUpdates"
+                android:layout_below="@+id/image"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="CORONA VIRUS GLOBALLY "
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:id="@+id/coronaVirusGlobal"
+                android:layout_below="@+id/getLiveUpdates"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Developed by Wakir Younus"
+                android:layout_below="@+id/coronaVirusGlobal"
+                android:textColor="@color/black"
+                android:id="@+id/developed"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:text="GET STARTED"
+                android:id="@+id/getStarted"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/developed"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:padding="15dp"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:id="@+id/wedefinenet"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/wedefinenet"
+                android:layout_below="@+id/getStarted"
+                android:layout_height="100dp"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</ScrollView>
+
