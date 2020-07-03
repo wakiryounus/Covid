@@ -83,6 +83,16 @@
                 android:layout_below="@+id/tv_new_recovered"
                 android:layout_marginVertical="10dp"
                 android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:id="@+id/tv_date"
+                android:textStyle="bold"
+                android:textColor="@color/dark"
+                android:layout_below="@+id/tv_total_recovered"
+                android:layout_marginVertical="10dp"
+                android:layout_centerHorizontal="true" />
             <ProgressBar
                 android:layout_width="150dp"
                 android:layout_height="150dp"

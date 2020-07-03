@@ -1,26 +1,25 @@
 package k.wakir.covid;
 
-import androidx.appcompat.app.AppCompatActivity;
+    import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
+    import android.content.Context;
+    import android.os.Bundle;
+    import android.view.View;
+    import android.widget.ProgressBar;
+    import android.widget.TextView;
+    import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+    import com.android.volley.Request;
+    import com.android.volley.RequestQueue;
+    import com.android.volley.Response;
+    import com.android.volley.VolleyError;
+    import com.android.volley.toolbox.JsonObjectRequest;
+    import com.android.volley.toolbox.Volley;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+    import org.json.JSONObject;
 
 public class GlobalActivity extends AppCompatActivity {
-    private TextView mNewConfirmed, mTotalConfirmed, mNewDeath, mTotalDeath, mNewRecovered, mTotalRecovered;
+    private TextView mNewConfirmed, mTotalConfirmed, mNewDeath, mTotalDeath, mNewRecovered, mTotalRecovered, mDate;
 
     private RequestQueue mRequestQueue;
     private Context mContext = GlobalActivity.this;
@@ -34,6 +33,7 @@ public class GlobalActivity extends AppCompatActivity {
         mTotalConfirmed = findViewById(R.id.tv_total_confirmed);
         mNewDeath = findViewById(R.id.tv_new_death);
         mTotalDeath = findViewById(R.id.tv_total_death);
+        mDate = findViewById(R.id.tv_date);
         mNewRecovered = findViewById(R.id.tv_new_recovered);
         mProgressBar = findViewById(R.id.progressbar);
         mTotalRecovered = findViewById(R.id.tv_total_recovered);
@@ -53,12 +53,15 @@ public class GlobalActivity extends AppCompatActivity {
                     String totalDeath = jsonObject.getString("TotalDeaths");
                     String newRecovered = jsonObject.getString("NewRecovered");
                     String totalRecovered = jsonObject.getString("TotalRecovered");
+                    String date = response.getString("Date");
+                    String shortDate = date.substring(0, Math.min(date.length(), 10));
                     mNewConfirmed.setText("New Confirmed : "+newConfirmed);
                     mTotalConfirmed.setText("Total Confirmed : "+totalConfirmed);
                     mNewDeath.setText("New Death : "+newDeath);
                     mTotalDeath.setText("Total Death : "+totalDeath);
                     mNewRecovered.setText("New Recovered : "+newRecovered);
                     mTotalRecovered.setText("Total Recovered : "+totalRecovered);
+                    mDate.setText("Updated : "+shortDate);
                     mProgressBar.setVisibility(View.GONE);
                 } catch (Exception e) {
                     e.printStackTrace();

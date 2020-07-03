@@ -15,6 +15,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -22,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import k.wakir.covid.adapters.IndiaListAdapter;
 import k.wakir.covid.models.ContinentList;
@@ -49,19 +51,20 @@ public class IndiaActivity extends AppCompatActivity implements IndiaListAdapter
         parseJSON();
     }
     private void parseJSON(){
-        String url = "https://covid19-india-adhikansh.herokuapp.com/states";
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+        String url = "https://covid-19india-api.herokuapp.com/v2.0/state_data";
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
-            public void onResponse(JSONObject response) {
+            public void onResponse(JSONArray response) {
                 try {
-                   JSONArray stateArray = response.getJSONArray("state");
-                    for (int i = 1; i < stateArray.length(); i++){
-                        JSONObject jsonObject = stateArray.getJSONObject(i);
-                        mStateName = jsonObject.getString("name");
-                        mTotal =  jsonObject.getString("total");
-                        mCured =  jsonObject.getString("cured");
+                   JSONObject stateArray = response.getJSONObject(1);
+                   JSONArray stateData = stateArray.getJSONArray("state_data");
+                    for (int i = 0; i < stateData.length(); i++){
+                        JSONObject jsonObject = stateData.getJSONObject(i);
+                        mStateName = jsonObject.getString("state");
+                        mTotal =  jsonObject.getString("confirmed");
+                        mCured =  jsonObject.getString("recovered");
                         mActive =  jsonObject.getString("active");
-                        mDeath =  jsonObject.getString("death");
+                        mDeath =  jsonObject.getString("deaths");
                         IndiaList indiaList = new IndiaList();
                         indiaList.setName(mStateName);
                         indiaList.setActive(mActive);
@@ -70,6 +73,8 @@ public class IndiaActivity extends AppCompatActivity implements IndiaListAdapter
                         indiaList.setTotal(mTotal);
                         mIndiaLists.add(indiaList);
                     }
+//                    HashSet<IndiaList> removed = new HashSet<>(mIndiaLists);
+//                    ArrayList<IndiaList> lastList = new ArrayList<>(removed);
                     IndiaListAdapter adapter = new IndiaListAdapter(mContext, mIndiaLists, IndiaActivity.this);
                     mRecyclerView.setAdapter(adapter);
                     mProgressBar.setVisibility(View.GONE);
@@ -99,7 +104,7 @@ public class IndiaActivity extends AppCompatActivity implements IndiaListAdapter
         intent.putExtra(getString(R.string.indian_active),"Active : "+ indiaList.getActive());
         intent.putExtra(getString(R.string.indian_death),"Deaths : "+ indiaList.getDeath());
         intent.putExtra(getString(R.string.indian_recovered),"Recovered : "+ indiaList.getCured());
-        intent.putExtra(getString(R.string.indian_total),"Total : "+ indiaList.getTotal());
+        intent.putExtra(getString(R.string.indian_total),"Confirmed : "+ indiaList.getTotal());
         startActivity(intent);
     }
 }
